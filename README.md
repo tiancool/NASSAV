@@ -56,7 +56,7 @@ sudo apt install ffmpeg
      - `SavePath`：设置视频保存路径
      - `Proxy`：配置代理服务器地址（如果不需要使用代理，设置成""即可）
      - `Downloader`：配置下载器及其优先级
-     - `IsNeedVideoProxy`：下载视频是否使用代理
+     - `IsNeedVideoProxy`：下载视频是否优先使用代理（最终都会尝试使用代理和不使用代理）
 
 ## 使用方法
 
@@ -109,7 +109,7 @@ sudo apt install ffmpeg
 python3 main.py <车牌号>
 ```
 
-3. 强制下载（忽略重复检查）：
+3. 强制下载（忽略重复检查——下载过程中ctrl-c就会出现这种情况）：
 ```bash
 python3 main.py <车牌号> -f
 ```
@@ -140,7 +140,7 @@ python3 main.py <车牌号> -f
 
 1. 编译并启动 HTTP 服务器：
 ```bash
-cd server
+cd backend
 go build -o main
 ./main
 ```
@@ -175,6 +175,19 @@ list页：
 ![](pic/gallery-list.png)
 detail页：
 ![](pic/gallery-detail.png)
+
+前端部署方式：
+1. 先调整后端的配置：
+```js
+import axios from 'axios'
+const API_BASE = 'http://192.168.31.61:31471' // 改成自己的ip
+```
+2. 重新生成静态文件到dist目录下：
+```bash
+cd frontend
+npm run build
+```
+3. 使用nginx部署静态网页：127.0.0.1:5177
 
 ## 配置说明
 
