@@ -29,7 +29,7 @@
         {
             "downloaderName": "KanAV",
             "domain": "kanav.info",
-            "weight": 2000
+            "weight": 490
         },
         {
             "downloaderName": "AvToday",
