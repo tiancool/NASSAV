@@ -272,6 +272,14 @@ class NewDownloader(Downloader):
 - 下载过程中请确保网络稳定
 - 下载频率不要过高。否则会被cloudflare安排进贤者时间
 
+## Reference
+
+前人栽树，后人乘凉
+
+1. m3u8-Downloader-Go（m3u8命令行下载器）: https://github.com/Greyh4t/m3u8-Downloader-Go
+2. mrjet（如何获取到missav的m3u8）: https://github.com/cailurus/mrjet
+
+
 ## 许可证
 
 本项目采用 MIT 许可证。详见 [LICENSE](LICENSE) 文件。 
